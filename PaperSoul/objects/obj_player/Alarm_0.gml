@@ -1,0 +1,1 @@
+instance_create_depth(x,y,depth,obj_smoke,{isParticle: false, sprite_index: spr_particulaPulo})

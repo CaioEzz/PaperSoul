@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_particulas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_particulas",
+  "parent":{
+    "name":"PaperSoul",
+    "path":"PaperSoul.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,9 @@
+movementSpd = 0
+xSpd = 0
+ySpd = 0
+gravForce = 0.6
+maxMoveSpd = 20
+maxFallSpd = 24
+coyoteTime = 10
+maxJumpHeight = -15
+state = "idle"
