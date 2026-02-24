@@ -49,9 +49,15 @@ if alive {
 	    }
 
 	    if ySpd > 0{
-	        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPontoPequeno,10,0.03,0.1)
-	        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPonto,10,0.03,0.1)
-	    }
+			if place_meeting(x,y+ySpd, obj_plataformaNuvem){
+				scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particleCloud,10,0.03,0.1)
+			}
+			else{
+		        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPontoPequeno,10,0.03,0.1)
+		        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPonto,10,0.03,0.1)
+			}
+		}
+		
 
 	    ySpd = 0
 	}

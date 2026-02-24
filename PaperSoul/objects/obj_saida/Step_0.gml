@@ -1,4 +1,4 @@
-if distance_to_object(obj_player) > 90 or obj_player.alive = false or global.portaTrancada = true{
+if distance_to_object(obj_player) > 20 or obj_player.alive = false or global.portaTrancada = true{
 	image_index = 0
 }
 
@@ -10,7 +10,7 @@ else if global.portaTrancada = false{
 }
 
 if global.portaTrancada{
-	if distance_to_object(obj_key) < 120{
+	if distance_to_object(obj_key) < 90{
 		obj_key.state = "unlock"
 	}
 }

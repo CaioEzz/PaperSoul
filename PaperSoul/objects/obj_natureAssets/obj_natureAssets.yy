@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_smoke",
+  "%Name":"obj_natureAssets",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_smoke",
+  "name":"obj_natureAssets",
   "overriddenProperties":[],
   "parent":{
-    "name":"Efeitos",
-    "path":"folders/Objetos/Efeitos.yy",
+    "name":"Elementos do cenário",
+    "path":"folders/Objetos/Elementos do cenário.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,13 +25,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v2","%Name":"velocidadeLerp","filters":[],"listItems":[],"multiselect":false,"name":"velocidadeLerp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_nature",
+    "path":"sprites/spr_nature/spr_nature.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
