@@ -16,103 +16,112 @@ if alive {
     if inputX != 0{
         sprite_dir = sign(inputX)
     }
-	#endregion
+    #endregion
 
 
-	#region Pulando
+    #region Pulando
 
-	    if keyboard_check_pressed(ord("Z")) and coyoteTime > 0{
-	        state = "jump"
-	        ySpd = maxJumpHeight
-	        coyoteTime = 0
-	        alarm[0] = 1   
+    var onGround = place_meeting(x, y + 1, obj_barrier)
+    var touchingWall = place_meeting(x + sign(inputX), y, obj_barrier)
+
+    // COYOTE TIME válido apenas no chão e não encostado em parede
+    if (onGround && ySpd >= 0 && !touchingWall){
+        coyoteTime = 10
+    } else {
+        ySpd += gravForce
+        coyoteTime--
+    }
+
+    // PULO
+    if keyboard_check_pressed(ord("Z")) && coyoteTime > 0 && !touchingWall{
+        state = "jump"
+        ySpd = maxJumpHeight
+        coyoteTime = 0
+        alarm[0] = 1
+    }
+
+    // CORTE DE PULO
+    if keyboard_check_released(ord("Z")) && ySpd < 0{
+        ySpd *= 0.4
+        coyoteTime = 0
+    }
+
+    #endregion
+
+
+    // COLISÃO VERTICAL
+    if place_meeting(x, y + ySpd, obj_barrier){
+        while (!place_meeting(x, y + sign(ySpd), obj_barrier)){
+            y += sign(ySpd)
+        }
+
+        if ySpd > 0{
+            if place_meeting(x, y + 1, obj_plataformaNuvem){
+                scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particleCloud, 10, 0.03, 0.1)
+            } else {
+                scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particulaPontoPequeno, 10, 0.03, 0.1)
+                scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particulaPonto, 10, 0.03, 0.1)
+            }
+        }
+
+        ySpd = 0
+    }
+
+    y += ySpd
+
+    if ySpd > maxFallSpd{
+        ySpd = maxFallSpd
+    }
+
+    // COLISÃO HORIZONTAL
+   if abs(xSpd) > 0.1 {
+	    if place_meeting(x + xSpd, y, obj_barrier){
+	        while (!place_meeting(x + sign(xSpd), y, obj_barrier)){
+	            x += sign(xSpd)
+        }
+        xSpd = 0
 	    }
-
-	    if place_meeting(x, y+1, obj_barrier){
-	        coyoteTime = 10
-	    }
-	    else{
-	        ySpd += gravForce
-	        coyoteTime--
-	    }
-
-	    if keyboard_check_released(ord("Z")) and ySpd < 0{
-	        coyoteTime = 0
-	        ySpd *= 0.4
-	    }
-
-	#endregion
-
-	if place_meeting(x, y + ySpd, obj_barrier){
-	    while (!place_meeting(x, y + sign(ySpd), obj_barrier)){
-	        y += sign(ySpd)
-	    }
-
-	    if ySpd > 0{
-			if place_meeting(x,y+ySpd, obj_plataformaNuvem){
-				scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particleCloud,10,0.03,0.1)
-			}
-			else{
-		        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPontoPequeno,10,0.03,0.1)
-		        scr_explosaoParticula(x,y+sprite_height/2,depth+1,180,ySpd,spr_particulaPonto,10,0.03,0.1)
-			}
-		}
-		
-
-	    ySpd = 0
 	}
 
-	y += ySpd
-
-	if ySpd > maxFallSpd{
-	    ySpd = maxFallSpd
-	}
-
-	if place_meeting(x + xSpd, y, obj_barrier){
-	    while (!place_meeting(x + sign(xSpd), y, obj_barrier)){
-	        x += sign(xSpd)
-	    }
-	    xSpd = 0
-	}
-
-	x += xSpd
+    x += xSpd
 
 
     #region Sprites
 
-        if ySpd != 0 and !place_meeting(x,y+1,obj_barrier){
-            state = "jump"
-        }
-        else if inputX != 0{
-            state = "walk"
-        }
-        else{
-            state = "idle"
-        }
+    if ySpd != 0 && !place_meeting(x, y+1, obj_barrier){
+        state = "jump"
+    }
+    else if inputX != 0{
+        state = "walk"
+    }
+    else{
+        state = "idle"
+    }
 
-        switch (state){
-            case "jump":
-                sprite_index = spr_playerJump
-                break;
+    switch (state){
+        case "jump":
+            sprite_index = spr_playerJump
+        break
 
-            case "walk":
-                sprite_index = spr_playerWalk
-                break;
+        case "walk":
+            sprite_index = spr_playerWalk
+        break
 
-            case "idle":
-                sprite_index = spr_playerIdle
-                break;
-        }
+        case "idle":
+            sprite_index = spr_playerIdle
+        break
+    }
 
     #endregion
 }
 
 else{
-	if alarm[2] <= 0{
-		sprite_index = spr_playerSoul
-	}else{
-		sprite_index = spr_playerRespawn
-	}
+
+    if alarm[2] <= 0{
+        sprite_index = spr_playerSoul
+    } else {
+        sprite_index = spr_playerRespawn
+    }
 
     inputX = keyboard_check(vk_right) - keyboard_check(vk_left)
     inputY = keyboard_check(vk_down) - keyboard_check(vk_up)
@@ -146,18 +155,20 @@ else{
     if inputX != 0 {
         sprite_dir = sign(inputX)
     }
-	
-	if keyboard_check_pressed(ord("Z")){
-		life_transition = true
-	}
-	if life_transition = true{
-		x = lerp(x,global.respawnX,0.1)
-		y = lerp(y,global.respawnY,0.1)
-		spinInd += 1
-		if spinInd > 90{
-			switch_world()
-		}
-	}
+
+    if keyboard_check_pressed(ord("Z")){
+        life_transition = true
+    }
+
+    if life_transition { // corrigido
+        x = lerp(x, global.respawnX, 0.1)
+        y = lerp(y, global.respawnY, 0.1)
+        spinInd += 1
+
+        if spinInd > 90{
+            switch_world()
+        }
+    }
 }
 
 #region Efeitos visuais
@@ -167,5 +178,3 @@ image_xscale = sprite_dir
 
 #endregion
 
-
-show_debug_message($"{xSpd} // {ySpd}")

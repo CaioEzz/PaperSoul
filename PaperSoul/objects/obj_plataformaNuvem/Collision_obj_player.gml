@@ -1,4 +1,4 @@
-if keyboard_check_pressed(ord("X")){
+if keyboard_check_pressed(ord("X")) and other.sprite_index = spr_playerSoul{
 	image_xscale = 1.6
 	attached = !attached
 }
