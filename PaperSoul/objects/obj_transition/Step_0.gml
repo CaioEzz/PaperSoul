@@ -3,6 +3,10 @@ if state == "closing" {
 	
 	if raio < 2 {
 		room_goto(nextRoom)
+		if audioPlayed = false{
+			audio_play_sound(snd_transitionOut,0,0)
+		}
+		audioPlayed = true
 		state = "opening"
 		raio = 0
 		raioAlvo = max(room_width, room_height)

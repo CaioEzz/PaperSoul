@@ -10,7 +10,10 @@ else if global.portaTrancada = false{
 }
 
 if global.portaTrancada{
-	if distance_to_object(obj_key) < 90{
+	if distance_to_object(obj_key) < 50{
+		if obj_key.state != "unlock"{
+			audio_play_sound(snd_slotIn,0,0)
+		}
 		obj_key.state = "unlock"
 	}
 }

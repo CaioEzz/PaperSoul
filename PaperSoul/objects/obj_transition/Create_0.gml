@@ -8,3 +8,17 @@ state = "closing"
 surf = -1
 
 global.pause = true
+
+if instance_exists(obj_player){
+	alvoX = obj_player.x 
+	alvoY = obj_player.y
+}
+
+else{
+	alvoX = room_width/2
+	alvoY = room_height/2
+}
+
+audioPlayed = false
+
+audio_play_sound(snd_transitionIn,0,0)

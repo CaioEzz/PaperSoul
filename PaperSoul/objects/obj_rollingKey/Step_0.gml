@@ -6,6 +6,8 @@ else{
 	scr_explosaoParticula(x, y + sprite_height/2, depth+1, 360, 15, spr_particulaPonto, 10, 0.03, 0.1)
 	scr_explosaoParticula(x, y + sprite_height/2, depth+1, 360, 15, spr_particulaPontoPequeno, 10, 0.03, 0.1)
 	target.image_index = 0
+	var monkesound = choose(snd_monkey1,snd_monkey2)
+	audio_play_sound(monkesound,0,0,,,random_range(1,1.3))
 	target.sprite_index = spr_monkeHandsUp
 	if target = monkeyA{target = monkeyB}
 	else if target = monkeyB{target = monkeyA}

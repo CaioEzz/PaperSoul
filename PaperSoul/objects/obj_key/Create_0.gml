@@ -8,3 +8,4 @@ levitate_timer = 0;
 base_y = y;       
 
 spinInd = 0
+pitchvar = 0

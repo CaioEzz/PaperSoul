@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_fenceGhost",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_fenceGhost",
+  "overriddenProperties":[],
+  "parent":{
+    "name":"Elementos do cenário",
+    "path":"folders/Objetos/Elementos do cenário.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_barriermaster",
+    "path":"objects/obj_barriermaster/obj_barriermaster.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"world","filters":[],"listItems":[],"multiselect":false,"name":"world","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"death\"","varType":2,},
+  ],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_grade",
+    "path":"sprites/spr_grade/spr_grade.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}

@@ -28,4 +28,9 @@ if state = "unlock"{
 	base_y = obj_saida.y
 	image_angle += spinInd
 	spinInd += 1
+	
+	if !audio_is_playing(snd_menuCancel){
+		pitchvar += 0.2
+		audio_play_sound(snd_menuCancel,0,0,,,1+pitchvar)
+	}
 }

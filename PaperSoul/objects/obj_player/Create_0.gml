@@ -17,3 +17,10 @@ global.respawnY = y
 
 spinInd = 0
 life_transition = false
+
+if !instance_exists(obj_camera){
+	instance_create_depth(-500,0,depth,obj_camera)
+}
+if !instance_exists(obj_controller){
+	instance_create_depth(-500,0,depth,obj_controller)
+}

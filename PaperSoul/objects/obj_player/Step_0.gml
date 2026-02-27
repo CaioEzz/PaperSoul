@@ -1,4 +1,3 @@
-// PAUSE GLOBAL
 if global.pause {
     xSpd = 0
     ySpd = 0
@@ -37,6 +36,7 @@ if alive {
         state = "jump"
         ySpd = maxJumpHeight
         coyoteTime = 0
+		audio_play_sound(snd_jump,2,0)
         alarm[0] = 1
     }
 
@@ -56,9 +56,11 @@ if alive {
         }
 
         if ySpd > 0{
-            if place_meeting(x, y + 1, obj_plataformaNuvem){
+            if place_meeting(x, y + 1, obj_plataformaNuvem) and sprite_index = spr_playerJump{
+				audio_play_sound(snd_jump,0,0,,,0.4)
                 scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particleCloud, 10, 0.03, 0.1)
-            } else {
+            } else if sprite_index = spr_playerJump {
+				audio_play_sound(snd_fallGround,0,0)
                 scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particulaPontoPequeno, 10, 0.03, 0.1)
                 scr_explosaoParticula(x, y + sprite_height/2, depth+1, 180, ySpd, spr_particulaPonto, 10, 0.03, 0.1)
             }
@@ -157,6 +159,9 @@ else{
     }
 
     if keyboard_check_pressed(ord("Z")){
+		if life_transition = false{
+			audio_play_sound(snd_respawnStart,0,0)
+		}
         life_transition = true
     }
 
