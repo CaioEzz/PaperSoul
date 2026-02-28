@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_discharge",
   "parent":{
-    "name":"Fluxo de jogo",
-    "path":"folders/Objetos/Fluxo de jogo.yy",
+    "name":"Sound",
+    "path":"folders/Sound.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

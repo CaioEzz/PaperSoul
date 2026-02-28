@@ -20,5 +20,3 @@ else{
 }
 
 audioPlayed = false
-
-audio_play_sound(snd_transitionIn,0,0)

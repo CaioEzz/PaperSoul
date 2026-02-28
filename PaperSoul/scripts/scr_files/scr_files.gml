@@ -28,3 +28,12 @@ function load_game() {
 
     }
 }
+
+function salvar_volume()
+{
+    var f = file_text_open_write("volume.txt")
+    file_text_write_string(f, string(global.volumesfx))
+    file_text_writeln(f)
+    file_text_write_string(f, string(global.volumemusic))
+    file_text_close(f)
+}

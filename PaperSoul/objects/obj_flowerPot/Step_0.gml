@@ -31,6 +31,8 @@ if currentInt > lastStageInt {
 	scr_explosaoParticula(x, y - sprite_height/2, depth+1, 360, 13, spr_particulaPontoPequeno, 10, 0.03, 0.1)
     scr_explosaoParticula(x, y - sprite_height/2, depth+1, 360, 13, spr_particulaBrilho, 10, 0.03, 0.1)
     image_xscale = 2; 
+	var vol = 0.80 + (lastStageInt > 0 ? 1/lastStageInt : 0);
+	audio_play_sound(snd_flower, 10, false, vol);
 }
 lastStageInt = currentInt;
 image_xscale = lerp(image_xscale, 1, 0.1);

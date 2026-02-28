@@ -6,7 +6,7 @@ if id == global.botaoSelecionado and !instance_exists(obj_transition){
 	}
     switch text {
         case "Novo jogo":
-            transition(rm_level01)
+            transition(rm_opening)
         break;
 
         case "Continuar":
@@ -35,6 +35,11 @@ if id == global.botaoSelecionado and !instance_exists(obj_transition){
 			instance_destroy(obj_button)
 		break;
 
+		case "Opções":
+			obj_menu.alarm[6] = 2
+			instance_destroy(obj_button)
+		break;
+
 		case "Fechar jogo":
 			game_end()
 		break;
@@ -43,7 +48,16 @@ if id == global.botaoSelecionado and !instance_exists(obj_transition){
 			obj_menu.alarm[3] = 2
 			instance_destroy(obj_button)
 		break;
+		
+		case "Tela cheia":
+			window_set_fullscreen(true)
+			text = "Janela"
+		break;
 
+		case "Janela":
+			window_set_fullscreen(false)
+			text = "Tela cheia"
+		break;
 	    }
 
 }
