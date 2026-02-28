@@ -1,8 +1,5 @@
 texts = [
-"A saída... existe,\nou é apenas um consolo inventado?",
-"Haveria de fato uma resolução?\nUm sentido oculto por trás do ruído?",
-"E se o sofrimento não carrega propósito…\nque o próprio término seja o único significado.",
-"(Obrigado por jogar.)\n\n(Bugs, críticas e sugestões no Discord: caio_ez_)"
+"Obrigado por jogar a beta do jogo.\nEsta versão foi feita em 7 dias para a NoneJam 12\n\nJogo por caio_ez_\nTrilha sonora por Alex-Productions"
 ];
 index = 0;
 
