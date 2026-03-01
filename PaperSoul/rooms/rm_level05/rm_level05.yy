@@ -33,6 +33,7 @@
     {"name":"inst_698A83BF","path":"rooms/rm_level05/rm_level05.yy",},
     {"name":"inst_BF969FF","path":"rooms/rm_level05/rm_level05.yy",},
     {"name":"inst_6CAC79A2","path":"rooms/rm_level05/rm_level05.yy",},
+    {"name":"inst_CBC53E3","path":"rooms/rm_level05/rm_level05.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -87,6 +88,10 @@
         {"$GMRInstance":"v4","%Name":"inst_BF969FF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BF969FF","objectId":{"name":"obj_natureAssets","path":"objects/obj_natureAssets/obj_natureAssets.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":991.0,"y":151.0,},
         {"$GMRInstance":"v4","%Name":"inst_33EA7921_1_1_1_1_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_33EA7921_1_1_1_1_1_1","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":480.0,},
         {"$GMRInstance":"v4","%Name":"inst_21D9940B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_21D9940B","objectId":{"name":"obj_fenceGhost","path":"objects/obj_fenceGhost/obj_fenceGhost.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.2890625,"scaleY":4.0,"x":242.5,"y":288.0,},
+        {"$GMRInstance":"v4","%Name":"inst_CBC53E3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":3,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_CBC53E3","objectId":{"name":"obj_placa","path":"objects/obj_placa/obj_placa.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_worldCondition","path":"objects/obj_worldCondition/obj_worldCondition.yy",},"propertyId":{"name":"world","path":"objects/obj_worldCondition/obj_worldCondition.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"life\"",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_placa","path":"objects/obj_placa/obj_placa.yy",},"propertyId":{"name":"text","path":"objects/obj_placa/obj_placa.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"De forma semelhante, objetos roxos podem ser segurados enquanto vivo.\"",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":860.0,"y":506.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_1F6CE113_1_1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1F6CE113_1_1","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":9.5,"scaleY":1.0,"spriteId":{"name":"spr_chao","path":"sprites/spr_chao/spr_chao.yy",},"x":644.0,"y":572.0,},
